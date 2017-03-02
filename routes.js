@@ -7,7 +7,7 @@ module.exports = {
 }
 
 function home (req, res) {
-  res.send("Hello world?")
+  res.sendFile(__dirname + '/views/home.html')
 }
 
 function form (req, res) {
