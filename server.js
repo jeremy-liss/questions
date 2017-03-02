@@ -22,7 +22,7 @@ app.set('views', path.join(__dirname, 'views'))
 app.get('/', routes.home)
 
 // //question input
-// app.get('/form')
+app.get('/form', routes.form)
 //
 // //sends question to next page
 // app.post('/form')
