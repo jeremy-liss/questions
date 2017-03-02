@@ -5,5 +5,5 @@ module.exports = {
 }
 
 function home (req, res) {
-  return "Hello world?"
+  res.send("Hello world?")
 }
