@@ -3,12 +3,14 @@ var app = express()
 var bodyParser = require('body-parser')
 var fs = require('fs')
 
+var routes = require('./routes')
+
 module.exports = app
 
 // app.use(bodyParser.urlencoded())
 
 //homepage
-app.get('/')
+app.get('/', routes.home)
 
 // //question input
 // app.get('/form')
