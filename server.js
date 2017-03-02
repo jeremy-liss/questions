@@ -1,7 +1,7 @@
 var path = require('path')
 var express = require('express')
 var hbs = require('express-handlebars')
-// var bodyParser = require('body-parser')
+var bodyParser = require('body-parser')
 
 var routes = require('./routes')
 
