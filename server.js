@@ -3,7 +3,7 @@ var express = require('express')
 var hbs = require('express-handlebars')
 // var bodyParser = require('body-parser')
 
-// var routes = require('./routes')
+var routes = require('./routes')
 
 var app = express()
 module.exports = app
@@ -19,9 +19,7 @@ app.set('view engine', 'hbs')
 app.set('views', path.join(__dirname, 'views'))
 
 //homepage
-app.get('/', function(req, res) {
-  res.sendFile(__dirname + '/views/home.html')
-})
+app.get('/', routes.home)
 
 // //question input
 // app.get('/form')
