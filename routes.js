@@ -1,4 +1,5 @@
 var fs = require('fs')
+var path = require('path')
 
 module.exports = {
   home: home,
@@ -10,5 +11,5 @@ function home (req, res) {
 }
 
 function form (req, res) {
-  res.send("hello, world")
+  res.sendFile(path.join(__dirname, 'public/form.html'))
 }
