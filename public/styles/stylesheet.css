@@ -1,0 +1,21 @@
+body {
+}
+
+h1 {
+  font-size: 100px;
+  color: pink;
+  font-family: cursive;
+  text-align: center;
+}
+
+h2 {
+  font-size: 20px;
+  color: blue;
+  font-weight: bold;
+}
+
+ p {
+   font-size: 12px;
+   color: black;
+   font-style: italic;
+ }

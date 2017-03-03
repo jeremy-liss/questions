@@ -8,6 +8,8 @@ var routes = require('./routes')
 var app = express()
 module.exports = app
 
+app.use(express.static('public'))
+
 app.use(bodyParser.urlencoded())
 
 //homepage
