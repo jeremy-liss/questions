@@ -23,8 +23,6 @@ app.get('/', routes.home)
 
 // //question input
 app.get('/form', routes.form)
-
-app.get('/testing', routes.testing)
 //
 // //sends question to next page
 // app.post('/form')
