@@ -4,36 +4,28 @@ var hbs = require('express-handlebars')
 var bodyParser = require('body-parser')
 
 var routes = require('./routes')
-var writeData = require('./write-data')
 
 var app = express()
 module.exports = app
 
 app.use(bodyParser.urlencoded())
 
-//middleware
+//homepage
+app.get('/', routes.home)
+
+// fill in the form page
+app.get('/form', routes.form)
+
+// saves questions and options
+app.post('/form', routes.saveForm)
+
+//displays the answer to your question
+app.get('/answer')
+
+//middleware for handlebars
 app.engine('hbs', hbs({
   extname: 'hbs',
   defaultLayout: 'main'
 }))
 app.set('view engine', 'hbs')
 app.set('views', path.join(__dirname, 'views'))
-
-//homepage
-app.get('/', routes.home)
-
-// //question input
-app.get('/form', routes.form)
-//
-// //sends question to next page
-app.post('/form', routes.saveForm)
-
-//
-// //loading page
-// app.get('/form-loading')
-//
-// //answer page
-  app.get('/answer', routes.getAnswer)
-//
-// //return back to homepage
-// res.redirect('/')
