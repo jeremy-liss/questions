@@ -29,6 +29,9 @@ function getAnswer(req, res){
   num = num.toString()
   var formObject = fs.readFileSync('./db/options.txt', 'utf-8')
   formObject = JSON.parse(formObject)
-  console.log(formObject[num])
-  res.send(formObject[num])
+  res.render("answer", {
+    question: formObject["question"],
+    option: formObject[num]
+   })
+
 }
