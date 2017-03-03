@@ -8,11 +8,11 @@ module.exports = {
 }
 
 function home (req, res) {
-  res.send("Hello world?")
+  res.sendFile(__dirname + '/views/home.html'
 }
 
 function form (req, res) {
-  res.sendFile(path.join(__dirname, 'public/form.html'))
+  res.sendFile(path.join(__dirname, 'views/form.html'))
 }
 
 function saveForm (req, res){
