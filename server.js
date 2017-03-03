@@ -26,7 +26,7 @@ app.get('/', routes.home)
 app.get('/form', routes.form)
 //
 // //sends question to next page
-app.post('/answer', writeData.saveForm)
+app.post('/answer', routes.saveForm)
 
 //
 // //loading page

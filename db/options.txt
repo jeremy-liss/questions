@@ -1,1 +1,1 @@
-{"0":"france","1":"germany","2":"poland","question":"Where thould i go?","button":"submit"}
+{"0":"Option 1","1":"Option 2","2":"Option 3","question":"What do you need to decide?","button":"submit"}
