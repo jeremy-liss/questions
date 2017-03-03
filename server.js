@@ -1,14 +1,15 @@
 var path = require('path')
 var express = require('express')
 var hbs = require('express-handlebars')
-// var bodyParser = require('body-parser')
+var bodyParser = require('body-parser')
 
 var routes = require('./routes')
+var writeData = require('./write-data')
 
 var app = express()
 module.exports = app
 
-// app.use(bodyParser.urlencoded())
+app.use(bodyParser.urlencoded())
 
 //middleware
 app.engine('hbs', hbs({
@@ -25,7 +26,8 @@ app.get('/', routes.home)
 app.get('/form', routes.form)
 //
 // //sends question to next page
-// app.post('/form')
+app.post('/answer', writeData.saveForm)
+
 //
 // //loading page
 // app.get('/form-loading')
