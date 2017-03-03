@@ -3,7 +3,8 @@ var path = require('path')
 
 module.exports = {
   home: home,
-  form: form
+  form: form,
+  saveForm: saveForm
 }
 
 function home (req, res) {
@@ -14,15 +15,9 @@ function form (req, res) {
   res.sendFile(path.join(__dirname, 'public/form.html'))
 }
 
-// function testing (req, res) {
-//   var text = __dirname + '/db/text.txt'
-//   var options = fs.readFileSync('./db/text.txt').toString()
-//   options = JSON.parse(options)
-//   console.log(options)
-//   res.render('options', {
-//     // check this part
-//     opt1: options["opt1"],
-//     opt2: options["opt2"],
-//     opt3: options["opt3"],
-//   })
-// }
+function saveForm (req, res){
+  fs.writeFile('./db/options.txt', JSON.stringify(req.body), function(err){
+  if(err) throw err
+  res.redirect('/answer')
+  })
+}
