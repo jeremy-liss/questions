@@ -26,14 +26,14 @@ app.get('/', routes.home)
 app.get('/form', routes.form)
 //
 // //sends question to next page
-app.post('/answer', routes.saveForm)
+app.post('/form', routes.saveForm)
 
 //
 // //loading page
 // app.get('/form-loading')
 //
 // //answer page
-// app.get('/answer')
+  app.get('/answer', routes.getAnswer)
 //
 // //return back to homepage
 // res.redirect('/')
