@@ -8,6 +8,8 @@ var routes = require('./routes')
 var app = express()
 module.exports = app
 
+app.use(express.static('public'))
+
 app.use(bodyParser.urlencoded())
 
 //homepage
@@ -17,7 +19,7 @@ app.get('/', routes.home)
 app.get('/form', routes.form)
 
 // saves questions and options
-app.post('/form', routes.saveForm)
+app.post('/answer', routes.saveForm)
 
 //displays the answer to your question
 app.get('/answer')

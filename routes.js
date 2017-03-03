@@ -8,7 +8,7 @@ module.exports = {
 }
 
 function home (req, res) {
-  res.sendFile(__dirname + '/views/home.html'
+  res.sendFile(__dirname + '/views/home.html')
 }
 
 function form (req, res) {
