@@ -9,7 +9,7 @@ module.exports = {
 }
 
 function home (req, res) {
-  res.sendFile(__dirname + '/views/home.html'
+  res.sendFile(__dirname + '/views/home.html')
 }
 
 function form (req, res) {
@@ -19,12 +19,16 @@ function form (req, res) {
 function saveForm (req, res){
   fs.writeFile('./db/options.txt', JSON.stringify(req.body), function(err){
   if (err) throw err
+  console.log(req.body);
   res.redirect('/answer')
   })
 }
 
 function getAnswer(req, res){
-  var formObject = fs.readFile('./db/options.txt', 'utf-8')
-  console.log(formObject)
-  res.send('uuhejhear;')
+  var num = Math.floor(Math.random() * 3)
+  num = num.toString()
+  var formObject = fs.readFileSync('./db/options.txt', 'utf-8')
+  formObject = JSON.parse(formObject)
+  console.log(formObject[num])
+  res.send(formObject[num])
 }

@@ -17,10 +17,10 @@ app.get('/', routes.home)
 app.get('/form', routes.form)
 
 // saves questions and options
-app.post('/form', routes.saveForm)
+app.post('/answer', routes.saveForm)
 
 //displays the answer to your question
-app.get('/answer')
+app.get('/answer', routes.getAnswer)
 
 //middleware for handlebars
 app.engine('hbs', hbs({
