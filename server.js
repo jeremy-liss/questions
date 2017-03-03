@@ -22,7 +22,7 @@ app.get('/form', routes.form)
 app.post('/answer', routes.saveForm)
 
 //displays the answer to your question
-app.get('/answer')
+app.get('/answer', routes.getAnswer)
 
 //middleware for handlebars
 app.engine('hbs', hbs({
